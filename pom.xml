@@ -25,6 +25,13 @@
           <artifactId>maven-war-plugin</artifactId>
           <version>2.3</version>
       </plugin>
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>true</downloadJavadocs>
+        </configuration>
+      </plugin>
     </plugins>
 
   </build>
@@ -75,8 +82,14 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
     </dependency>
+
+    <dependency>
+	  <groupId>com.oracle</groupId>
+	  <artifactId>ojdbc7</artifactId>
+	  <version>12.1.0.2</version>
+	  <scope>system</scope>
+	  <systemPath>${basedir}/lib/ojdbc7.jar</systemPath> <!-- must match file name -->
+    </dependency>
   </dependencies>
-
-
 
 </project>
