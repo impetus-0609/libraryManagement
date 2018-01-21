@@ -13,24 +13,6 @@
                                http://www.springframework.org/schema/mvc
                                http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
-  <!-- データソースの設定 -->
-  <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
-    <property name="URL" value="/libraryManagement/lib/ojdbc7.jar" />
-    <property name="user" value="system"/>
-    <property name="password" value="asadmin"/>
-  </bean>
-
-  <!-- SqlSessionFactoryの設定 -->
-  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
-    <property name="dataSource" ref="dataSource"/>
-  </bean>
-
-   <!-- Mapperインターフェースの登録 -->
-  <bean id="LoginTestMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-    <property name="mapperInterface" value="mapper" />
-    <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-  </bean>
-
   <context:annotation-config />
 
 </beans>

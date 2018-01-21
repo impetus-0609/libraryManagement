@@ -1,4 +1,4 @@
-package dto;
+package co.jp.impetus.dto;
 
 import java.io.Serializable;
 
@@ -9,6 +9,9 @@ public class LoginDto implements Serializable {
 
     // パスワード
     private String password;
+
+    // ID
+    private int id;
 
     /**
      * mailAddressを取得します。
@@ -40,6 +43,22 @@ public class LoginDto implements Serializable {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * idを取得します。
+     * @return id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * idを設定します。
+     * @param id id
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
 
