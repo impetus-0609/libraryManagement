@@ -1,0 +1,17 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring3-3.dtd">
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>ログイン画面(thymeleaf)</title>
+</head>
+
+<body>
+  <form role="form" action="/next" th:action="@{/next}" th:object="${loginDto}" method="post">
+    メールアドレスとパスワードを入力してください。<br>
+    <input type="text" name="mailAddress" th:field="*{mailAddress}">
+    <input type="text" name="password" th:field="*{password}">
+    <input type="submit" value="送信">
+  </form>
+</body>
+</html>

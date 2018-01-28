@@ -36,7 +36,7 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/next", method = RequestMethod.POST)
     public ModelAndView next(
             @ModelAttribute(INPUT_COMMAND_NAME) LoginDto dto,
             BindingResult result) throws Exception {
