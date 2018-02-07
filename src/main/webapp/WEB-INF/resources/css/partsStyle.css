@@ -1,0 +1,30 @@
+/*
+ Copyright: 2018 Impetus-act
+ Title: partsStyle.css
+ Author: Tomomi Nishikata
+ */
+
+/* topページボタンの余白 */
+.topmenu-button {
+  margin:10px;
+}
+
+/* テキストの間隔 */
+.items-detail > div > * {
+  padding: 10px 20px;
+}
+
+/* 書名 */
+.items-title {
+  font-size: 26px;
+}
+
+/* 詳細情報フォントサイズ */
+.details {
+  font-size: 13px;
+}
+
+/* フォント赤 */
+.red {
+  color: red;
+}
