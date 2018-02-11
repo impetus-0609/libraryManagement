@@ -15,6 +15,7 @@ import co.jp.impetus.dto.LoginResultDto;
 import co.jp.impetus.mapper.LoginMapper;
 
 @Controller
+@RequestMapping(value = "/login")
 public class LoginController {
 
     @Autowired
@@ -28,7 +29,7 @@ public class LoginController {
         return dto;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/init", method = RequestMethod.GET)
     public String init(Model model) {
         LoginDto dto = createLoginDto();
         model.addAttribute(INPUT_COMMAND_NAME, dto);

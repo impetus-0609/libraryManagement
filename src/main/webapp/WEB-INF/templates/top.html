@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>ログイン画面</title>
+    <title>トップ画面</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -16,26 +16,21 @@
       <span class="project-name">LibraryManagement</span>
     </div>
     <div class="row sub-header">
-      <p:th text='login' />ログイン画面
+      <p:th text='top' />トップ画面
     </div>
     <div class="content-area">
-      <div class="text-center content-center">
-        <span>ユーザ名、パスワードを入力してください。</span>
-        <form class="form-horizontal" id="" style="">
-          <div class="form-group">
-            <div class="col-md-12">
-              <input class="form-control" type="text" placeholder="ユーザー名" size="16" />
-            </div>
+      <div class="row text-center content-center" style="">
+        <div class="col-md-6">
+          <img src="../resources/images/gazouhaimage.png" style="height:200px;width:300px;"/>
+        </div>
+        <div class="col-md-6" style="">
+          <div>
+            <a href="" class="btn btn-primary btn-lg topmenu-button">商品検索</a>
           </div>
-          <div class="form-group">
-            <div class="col-md-12">
-              <input class="form-control" type="password" placeholder="パスワード" size="16" />
-            </div>
+          <div>
+            <a href="" class="btn btn-primary btn-lg topmenu-button">商品登録</a>
           </div>
-          <div class="">
-            <input type="submit" class="btn btn-lg btn-primary" method="post" value="ログイン" onclick="" />
-          </div>
-        </form>
+        </div>
       </div>
     </div>
     <div class="row footer text-center">
