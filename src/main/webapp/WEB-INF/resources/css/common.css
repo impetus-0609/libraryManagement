@@ -1,0 +1,69 @@
+/*
+ Copyright: 2018 Impetus-act
+ Title: common.css
+ Author: Tomomi Nishikata
+ */
+
+/* 画面全体の調整 */
+.disp-style {
+  background: #e3e3e3;
+  overflow-y: scroll;
+}
+
+/* メインコンテンツ領域 */
+.content-area {
+  height: calc(100vh - 60px - 60px - 30px);
+}
+
+/* ヘッダーのスタイル */
+.header {
+  background: #86ee60;
+  height: 60px;
+  display: block;
+  padding: 10px 20px;
+}
+
+/* サブヘッダー */
+.sub-header {
+  background: #99f0ca;
+  height: 30px;
+  padding: 2px 20px;
+}
+
+/* フッター */
+.footer {
+  background: #233142;
+  height: 60px;
+  padding: 10px 20px;
+  color: #fdfcfc;
+}
+
+/* タイトル */
+.project-name {
+  font-size: 24px;
+}
+
+/* topページボタンの余白 */
+.topmenu-button {
+  margin: 10px;
+}
+
+/* 説明文エリア */
+.message-area {
+  background: #e3e3e3;
+  height: 60px;
+  width: 100%;
+  display: block;
+  padding: 10px 20px;
+}
+
+html, body, .content-center {
+    height: 100%;           /* 1 */
+}
+
+/* 上下中央揃え */
+.content-center {
+  display: flex;          /* 2 */
+  justify-content: center;/* 3 */
+  align-items: center;    /* 4 */
+}
