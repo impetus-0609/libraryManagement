@@ -34,7 +34,6 @@
     <property name="dataSource" ref="dataSource" />
   </bean>
 
- <!--
   <tx:advice id="transactionAdvisor" transaction-manager="transactionManager">
     <tx:attributes>
       <tx:method name="*" />
@@ -42,10 +41,9 @@
   </tx:advice>
 
   <aop:config>
-    <aop:pointcut id="txPointcut" expression="execution(* co.jp.impetus.service..*.*(..))"/>
+    <aop:pointcut id="txPointcut" expression="execution(* co.jp.impetus.service.*Service.*(..))"/>
     <aop:advisor advice-ref="transactionAdvisor" pointcut-ref="txPointcut"/>
   </aop:config>
--->
 
   <!-- SQLセッションファクトリー -->
   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
