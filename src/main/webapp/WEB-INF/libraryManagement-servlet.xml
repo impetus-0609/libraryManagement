@@ -29,7 +29,11 @@
     <property name="password" value="postgres" />
   </bean>
 
-  <!-- トランザクションマネージャー -->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="co.jp.impetus.mapper" />
+  </bean>
+
+  <!-- トランザクション設定 -->
   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     <property name="dataSource" ref="dataSource" />
   </bean>
@@ -49,11 +53,6 @@
   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     <property name="configLocation" value="/WEB-INF/mybatis/mybatis.xml" />
     <property name="dataSource" ref="dataSource" />
-  </bean>
-
-  <!-- xxxMapper.xmlの記述を省略できる -->
-  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="co.jp.impetus.mapper" />
   </bean>
 
   <!-- Thymeleaf -->
