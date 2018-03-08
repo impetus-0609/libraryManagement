@@ -22,21 +22,21 @@
     </div>
     <div class="content-area">
       <div class="row  content-center">
-        <div class="col-md-6 items-detail" style="">
+        <div class="col-md-6 items-detail" style="" th:object="${detailsDto}">
           <div class="">
-            <label class="items-title" type="" title="書名" style="">たのしい！Java</label>
+            <label class="items-title" type="" title="書名" style="" th:text="*{prouductionName}">たのしい！Java</label>
           </div>
           <div>
-            <label class="author" type="" title="著者名・編者名" style="">著者名・編者名：ウラジーミル・ニシコフ</label>
+            <label class="author" type="" title="著者名・編者名" style="" th:text="*{authorName}">著者名・編者名：ウラジーミル・ニシコフ</label>
           </div>
           <div>
-            <label class="publishedcomp" type="" title="出版社" style="">出版社：講談社</label>
+            <label class="publishedcomp" type="" title="出版社" style="" th:text="*{publisherName}">出版社：講談社</label>
           </div>
           <div>
             <label class="publishedym" type="" title="出版年月" style="">出版年月：2017.12</label>
           </div>
           <div>
-            <label class="isbn-code" type="" title="ISBN" style="">ISBN：9784114514191</label>
+            <label class="isbn-code" type="" title="ISBN" style="" th:text="*{isbnCode}">ISBN：9784114514191</label>
           </div>
         </div>
         <div class="col-md-6" style="">
