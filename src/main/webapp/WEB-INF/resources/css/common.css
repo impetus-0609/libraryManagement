@@ -4,18 +4,18 @@
  Author: Tomomi Nishikata
  */
 
-/* ‰æ–Ê‘S‘Ì‚Ì’²® */
+/* ï¿½ï¿½Ê‘Sï¿½Ì‚Ì’ï¿½ï¿½ï¿½ */
 .disp-style {
   background: #e3e3e3;
-  overflow-y: scroll;
+/*   overflow-y: scroll; */
 }
 
-/* ƒƒCƒ“ƒRƒ“ƒeƒ“ƒc—Ìˆæ */
+/* ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½Ìˆï¿½ */
 .content-area {
   height: calc(100vh - 60px - 60px - 30px);
 }
 
-/* ƒwƒbƒ_[‚ÌƒXƒ^ƒCƒ‹ */
+/* ï¿½wï¿½bï¿½_ï¿½[ï¿½ÌƒXï¿½^ï¿½Cï¿½ï¿½ */
 .header {
   background: #86ee60;
   height: 60px;
@@ -23,14 +23,14 @@
   padding: 10px 20px;
 }
 
-/* ƒTƒuƒwƒbƒ_[ */
+/* ï¿½Tï¿½uï¿½wï¿½bï¿½_ï¿½[ */
 .sub-header {
   background: #99f0ca;
   height: 30px;
   padding: 2px 20px;
 }
 
-/* ƒtƒbƒ^[ */
+/* ï¿½tï¿½bï¿½^ï¿½[ */
 .footer {
   background: #233142;
   height: 60px;
@@ -38,17 +38,17 @@
   color: #fdfcfc;
 }
 
-/* ƒ^ƒCƒgƒ‹ */
+/* ï¿½^ï¿½Cï¿½gï¿½ï¿½ */
 .project-name {
   font-size: 24px;
 }
 
-/* topƒy[ƒWƒ{ƒ^ƒ“‚Ì—]”’ */
+/* topï¿½yï¿½[ï¿½Wï¿½{ï¿½^ï¿½ï¿½ï¿½Ì—]ï¿½ï¿½ */
 .topmenu-button {
   margin: 10px;
 }
 
-/* à–¾•¶ƒGƒŠƒA */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½A */
 .message-area {
   background: #e3e3e3;
   height: 60px;
@@ -61,7 +61,7 @@ html, body, .content-center {
     height: 100%;           /* 1 */
 }
 
-/* ã‰º’†‰›‘µ‚¦ */
+/* ï¿½ã‰ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .content-center {
   display: flex;          /* 2 */
   justify-content: center;/* 3 */

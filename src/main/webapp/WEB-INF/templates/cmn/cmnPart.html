@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="common_header(title,links)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:replace="${title}">Universal page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/partsStyle.css">
+    <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+  </head>
+  <body class="container-fluid disp-style" style="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+    <!--/* 共通ヘッダーの実装 */-->
+    <header th:fragment="header">
+      <div class="row header">
+        <h1 class="project-name">LibraryManagement</h1>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light row sub-header">
+        <a class="navbar-brand" href="#">TOP</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#pageList"aria-controls="pageList" aria-expanded="false" aria-label="ナビゲーションの切替">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="pageList">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link disabled" href="#">Search</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">Regist</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">Details</a></li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <button type="submit" class="btn btn-sm ml-4 btn-outline-success my-2 my-sm-0">Logout</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <!--/* 共通フッターの実装 */-->
+    <footer th:fragment="footer" class="row footer text-center">
+      <div class="col-md-12">
+        <span>(c)2018 impetus-act</span>
+      </div>
+    </footer>
+  </body>
+</html>

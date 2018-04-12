@@ -12,15 +12,8 @@
     <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
   </head>
   <body class="container-fluid disp-style" style="">
-    <div class="row header">
-      <span class="project-name">LibraryManagement</span>
-    </div>
-    <div class="row sub-header">
-      <div>
-        <p:th text='details' />詳細画面
-      </div>
-    </div>
-    <div class="content-area">
+    <div th:replace="cmn/cmnPart :: header"></div>
+    <div class="content-area container">
       <div class="row  content-center">
         <div class="col-md-6 items-detail" style="" th:object="${detailsDto}">
           <div class="">
@@ -46,10 +39,6 @@
         </div>
       </div>
     </div>
-    <div class="row footer text-center">
-      <div class="col-md-12">
-        <span>(c)2018 impetus-act</span>
-      </div>
-    </div>
+    <div th:replace="cmn/cmnPart :: footer"></div>
   </body>
 </html>
