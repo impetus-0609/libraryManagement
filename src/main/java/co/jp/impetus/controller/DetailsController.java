@@ -1,5 +1,9 @@
 package co.jp.impetus.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,23 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import co.jp.impetus.dto.DetailsDto;
-import co.jp.impetus.mapper.LoginMapper;
+import co.jp.impetus.mapper.DetailsMapper;
 import co.jp.impetus.service.DetailsService;
 
 @Controller
 @RequestMapping(value = "/details")
+@MapperScan("co.jp.impetus.mapper.DetailsMapper")
 public class DetailsController {
 
     @Autowired
-    LoginMapper mapper;
+    DetailsMapper mapper;
 
     public static final String INPUT_COMMAND_NAME = "detailsDto";
 
     @RequestMapping(value = "/init", method = RequestMethod.GET)
     public String init(Model model) {
 
-        //LoginDto dto = createLoginDto();
-    	DetailsDto dto = createDetailsDto();
+    	List<DetailsDto> dtoList = new ArrayList<>();
+    	DetailsDto dto = null;
+    	DetailsService service = new DetailsService();
+
+    	dtoList = createDetailsDto();
+
+    	dto = service.testLogic(dtoList);
 
         model.addAttribute(INPUT_COMMAND_NAME, dto);
 
@@ -32,16 +42,12 @@ public class DetailsController {
     }
 
     @ModelAttribute(INPUT_COMMAND_NAME)
-    private DetailsDto createDetailsDto() {
+    private List<DetailsDto> createDetailsDto() {
 
-    	DetailsDto dto = new DetailsDto();
+    	List<DetailsDto> resultList = new ArrayList<>();
+    	resultList = mapper.select();
 
-    	//サービスクラスの作成
-    	DetailsService service =  new DetailsService(dto);
-
-    	DetailsDto detailsDto = service.getDetailsDto() ;
-
-        return detailsDto;
+        return resultList;
     }
 
 }

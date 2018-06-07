@@ -6,19 +6,19 @@ import java.util.Date;
 public class DetailsDto implements Serializable {
 
 	/*ISBNコード*/
-	private String isbnCode ;
+	private String isbn_cd ;
 
 	/*作品名*/
-	private String prouductionName ;
+	private String production_name ;
 
 	/*作者名*/
-	private String authorName ;
+	private String author_name ;
 
 	/*発行元*/
-	private String publisherName ;
+	private String publisher ;
 
 	/*発効年月日*/
-	private Date issuedDate ;
+	private Date issued_date ;
 
 	/*DBに項目はあるがモックに項目がないため、他の項目については割愛する*/
 
@@ -28,7 +28,7 @@ public class DetailsDto implements Serializable {
 	 * @return String isbnCode
 	 */
 	public String getIsbnCode() {
-		return isbnCode;
+		return isbn_cd;
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class DetailsDto implements Serializable {
 	 * @param String isbnCode
 	 */
 	public void setIsbnCode(String isbnCode) {
-		this.isbnCode = isbnCode;
+		this.isbn_cd = isbnCode;
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class DetailsDto implements Serializable {
 	 * @return String prouductionName
 	 */
 	public String getProuductionName() {
-		return prouductionName;
+		return production_name;
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class DetailsDto implements Serializable {
 	 * @param String prouductionName
 	 */
 	public void setProuductionName(String prouductionName) {
-		this.prouductionName = prouductionName;
+		this.production_name = prouductionName;
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class DetailsDto implements Serializable {
 	 * @return author_name
 	 */
 	public String getAuthorName() {
-		return authorName;
+		return author_name;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class DetailsDto implements Serializable {
 	 * @param author_name セットする author_name
 	 */
 	public void setAuthorName(String author_name) {
-		this.authorName = author_name;
+		this.author_name = author_name;
 	}
 
 	/**
@@ -76,7 +76,7 @@ public class DetailsDto implements Serializable {
 	 * @return publisherName
 	 */
 	public String getPublisherName() {
-		return publisherName;
+		return publisher;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class DetailsDto implements Serializable {
 	 * @param publisherName セットする publisherName
 	 */
 	public void setPublisherName(String publisherName) {
-		this.publisherName = publisherName;
+		this.publisher = publisherName;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class DetailsDto implements Serializable {
 	 * @return issuedDate
 	 */
 	public Date getIssuedDate() {
-		return issuedDate;
+		return issued_date;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class DetailsDto implements Serializable {
 	 * @param issuedDate セットする issuedDate
 	 */
 	public void setIssuedDate(Date issuedDate) {
-		this.issuedDate = issuedDate;
+		this.issued_date = issuedDate;
 	}
 
 }
