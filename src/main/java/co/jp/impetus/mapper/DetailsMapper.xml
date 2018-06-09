@@ -1,0 +1,29 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="co.jp.impetus.mapper.DetailsMapper">
+
+    <select id="select" resultType="co.jp.impetus.dto.DetailsDto">
+        SELECT
+          isbn_cd
+          , production_name
+          , author_name
+          , publisher
+          , issued_date
+          , price
+          , category
+          , book_path
+          , description1
+          , description2
+          , stock
+          , "language"
+          , resgister_dt
+          , register_date
+          , update_dt
+          , update_date
+        FROM
+          m_book
+    </select>
+
+</mapper>

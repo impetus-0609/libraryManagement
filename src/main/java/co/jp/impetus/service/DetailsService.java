@@ -30,6 +30,7 @@ public class DetailsService {
 
 	}
 
+	/***/
 	public DetailsDto testLogic(List<DetailsDto> list) {
 
 		dto = list.get(0);

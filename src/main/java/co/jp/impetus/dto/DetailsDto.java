@@ -35,8 +35,8 @@ public class DetailsDto implements Serializable {
 	 * ISBNコードを設定する
 	 * @param String isbnCode
 	 */
-	public void setIsbnCode(String isbnCode) {
-		this.isbn_cd = isbnCode;
+	public void setIsbnCode(String isbn_cd) {
+		this.isbn_cd = isbn_cd;
 	}
 
 	/**
