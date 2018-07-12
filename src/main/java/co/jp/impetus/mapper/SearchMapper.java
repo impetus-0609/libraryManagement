@@ -1,9 +1,9 @@
 package co.jp.impetus.mapper;
 
-import co.jp.impetus.dto.SearchBookdDto;
+import co.jp.impetus.dto.SearchBookDto;
 
 public interface SearchMapper {
 
 	// 本の検索
-	SearchBookdDto selectSearchBookOne();
+	SearchBookDto selectSearchBookOne();
 }

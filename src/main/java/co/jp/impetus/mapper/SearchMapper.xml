@@ -4,7 +4,7 @@
 
 <mapper namespace="co.jp.impetus.mapper.SearchMapper">
 
-	<resultMap id="searchResuktMap" type="co.jp.impetus.dto.SearchBookdDto">
+	<resultMap id="searchResuktMap" type="co.jp.impetus.dto.SearchBookDto">
 		<result column="isbn_cd" property="isbnCode" />
 		<result column="production_name" property="prouductionName" />
 		<result column="author_name" property="authorName" />

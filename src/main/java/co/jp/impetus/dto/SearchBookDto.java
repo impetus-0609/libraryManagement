@@ -3,7 +3,7 @@ package co.jp.impetus.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-public class SearchBookdDto implements Serializable {
+public class SearchBookDto implements Serializable {
 
 	/**ISBNコード*/
 	private String isbnCode;

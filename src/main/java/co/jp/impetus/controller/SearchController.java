@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import co.jp.impetus.dto.LoginDto;
-import co.jp.impetus.dto.SearchBookdDto;
+import co.jp.impetus.dto.SearchBookDto;
 import co.jp.impetus.mapper.LoginMapper;
 import co.jp.impetus.mapper.SearchMapper;
 
@@ -32,8 +32,8 @@ public class SearchController {
     }
 
     @ModelAttribute(SEARCH_COMMAND_NAME)
-    public SearchBookdDto createSearchBookDto() {
-    	SearchBookdDto dto = new SearchBookdDto();
+    public SearchBookDto createSearchBookDto() {
+    	SearchBookDto dto = new SearchBookDto();
         return dto;
     }
 
@@ -52,7 +52,7 @@ public class SearchController {
      */
     @RequestMapping(value = "/comfirm", method = RequestMethod.GET)
     public String initTest(Model testModel) {
-    	SearchBookdDto resultDto = createSearchBookDto();
+    	SearchBookDto resultDto = createSearchBookDto();
     	resultDto = searchMapper.selectSearchBookOne();
         testModel.addAttribute(SEARCH_COMMAND_NAME, resultDto);
 
