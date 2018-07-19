@@ -6,22 +6,22 @@
 
     <select id="select" resultType="co.jp.impetus.dto.DetailsDto">
         SELECT
-          isbn_cd
-          , production_name
-          , author_name
-          , publisher
-          , issued_date
-          , price
-          , category
-          , book_path
-          , description1
-          , description2
-          , stock
-          , "language"
-          , resgister_dt
-          , register_date
-          , update_dt
-          , update_date
+          isbn_cd As isbnCd
+          , production_name As productionName
+          , author_name As authorName
+          , publisher As publisher
+          , issued_date As issuedDate
+          , price As price
+          , category As category
+          , book_path As bookPath
+          , description1 As description1
+          , description2 As description2
+          , stock As stock
+          , language As language
+          , resgister_dt As resgister_Dt
+          , register_date As registerDate
+          , update_dt As updateDt
+          , update_date As updateDate
         FROM
           m_book
     </select>

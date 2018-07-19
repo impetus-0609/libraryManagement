@@ -6,101 +6,226 @@ import java.util.Date;
 public class DetailsDto implements Serializable {
 
 	/*ISBNコード*/
-	private String isbn_cd ;
-
+	private String isbnCd ;
+	
 	/*作品名*/
-	private String production_name ;
+	private String productionName ;
 
 	/*作者名*/
-	private String author_name ;
+	private String authorName ;
 
 	/*発行元*/
 	private String publisher ;
 
 	/*発効年月日*/
-	private Date issued_date ;
+	private Date issuedDate ;
 
-	/*DBに項目はあるがモックに項目がないため、他の項目については割愛する*/
-
+	private Integer price ;
+	
+	private String category;
+	private String bookPath;
+	private String description1;
+	private String description2;
+	private String stock;
+	private String language;
+	private String resgisterDt;
+	private Date registerDate;
+	private String updateDt;
+	private Date updateDate;
 
 	/**
-	 * ISBNコードを取得する
-	 * @return String isbnCode
+	 * @return isbn_cd
 	 */
-	public String getIsbnCode() {
-		return isbn_cd;
+	public String getIsbnCd() {
+		return isbnCd;
 	}
-
 	/**
-	 * ISBNコードを設定する
-	 * @param String isbnCode
+	 * @param isbn_cd セットする isbn_cd
 	 */
-	public void setIsbnCode(String isbn_cd) {
-		this.isbn_cd = isbn_cd;
+	public void setIsbnCd(String isbnCd) {
+		this.isbnCd = isbnCd;
 	}
-
 	/**
-	 * 作品名を取得する
-	 * @return String prouductionName
+	 * @return productionName
 	 */
-	public String getProuductionName() {
-		return production_name;
+	public String getProductionName() {
+		return productionName;
 	}
-
 	/**
-	 * 作品名を設定する
-	 * @param String prouductionName
+	 * @param productionName セットする productionName
 	 */
-	public void setProuductionName(String prouductionName) {
-		this.production_name = prouductionName;
+	public void setProductionName(String productionName) {
+		this.productionName = productionName;
 	}
-
 	/**
-	 * 作者名を取得する
-	 * @return author_name
+	 * @return authorName
 	 */
 	public String getAuthorName() {
-		return author_name;
+		return authorName;
 	}
-
 	/**
-	 * 作者名を設定する
-	 * @param author_name セットする author_name
+	 * @param authorName セットする authorName
 	 */
-	public void setAuthorName(String author_name) {
-		this.author_name = author_name;
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
 	}
-
 	/**
-	 * 発行元を取得する
-	 * @return publisherName
+	 * @return publisher
 	 */
-	public String getPublisherName() {
+	public String getPublisher() {
 		return publisher;
 	}
-
 	/**
-	 * 発行元を設定する
-	 * @param publisherName セットする publisherName
+	 * @param publisher セットする publisher
 	 */
-	public void setPublisherName(String publisherName) {
-		this.publisher = publisherName;
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
-
 	/**
-	 * 発効年月日を取得する
 	 * @return issuedDate
 	 */
 	public Date getIssuedDate() {
-		return issued_date;
+		return issuedDate;
 	}
-
 	/**
-	 * 発効年月日を設定する
 	 * @param issuedDate セットする issuedDate
 	 */
 	public void setIssuedDate(Date issuedDate) {
-		this.issued_date = issuedDate;
+		this.issuedDate = issuedDate;
 	}
+	/**
+	 * @return price
+	 */
+	public Integer getPrice() {
+		return price;
+	}
+	/**
+	 * @param price セットする price
+	 */
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+	/**
+	 * @return category
+	 */
+	public String getCategory() {
+		return category;
+	}
+	/**
+	 * @param category セットする category
+	 */
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	/**
+	 * @return bookPath
+	 */
+	public String getBookPath() {
+		return bookPath;
+	}
+	/**
+	 * @param bookPath セットする bookPath
+	 */
+	public void setBookPath(String bookPath) {
+		this.bookPath = bookPath;
+	}
+	/**
+	 * @return description1
+	 */
+	public String getDescription1() {
+		return description1;
+	}
+	/**
+	 * @param description1 セットする description1
+	 */
+	public void setDescription1(String description1) {
+		this.description1 = description1;
+	}
+	/**
+	 * @return description2
+	 */
+	public String getDescription2() {
+		return description2;
+	}
+	/**
+	 * @param description2 セットする description2
+	 */
+	public void setDescription2(String description2) {
+		this.description2 = description2;
+	}
+	/**
+	 * @return stock
+	 */
+	public String getStock() {
+		return stock;
+	}
+	/**
+	 * @param stock セットする stock
+	 */
+	public void setStock(String stock) {
+		this.stock = stock;
+	}
+	/**
+	 * @return language
+	 */
+	public String getLanguage() {
+		return language;
+	}
+	/**
+	 * @param language セットする language
+	 */
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	/**
+	 * @return resgisterDt
+	 */
+	public String getResgisterDt() {
+		return resgisterDt;
+	}
+	/**
+	 * @param resgisterDt セットする resgisterDt
+	 */
+	public void setResgisterDt(String resgisterDt) {
+		this.resgisterDt = resgisterDt;
+	}
+	/**
+	 * @return registerDate
+	 */
+	public Date getRegisterDate() {
+		return registerDate;
+	}
+	/**
+	 * @param registerDate セットする registerDate
+	 */
+	public void setRegisterDate(Date registerDate) {
+		this.registerDate = registerDate;
+	}
+	/**
+	 * @return updateDt
+	 */
+	public String getUpdateDt() {
+		return updateDt;
+	}
+	/**
+	 * @param updateDt セットする updateDt
+	 */
+	public void setUpdateDt(String updateDt) {
+		this.updateDt = updateDt;
+	}
+	/**
+	 * @return updateDate
+	 */
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+	/**
+	 * @param updateDate セットする updateDate
+	 */
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+
 
 }
