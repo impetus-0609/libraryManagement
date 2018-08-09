@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/partsStyle.css">
+   	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../resources/js/search.js"></script>
     <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
   </head>
   <body  class="container-fluid disp-style" style="background: #e3e3e3;">
@@ -93,9 +95,66 @@
           </div>
           <div class="col-md-9 text-right">
            <input class="btn btn-lg btn-primary" type="button" placeholder="" value="検　索" />
-           <button type="submit" class="btn btn-primary">confirm</button>
+           <button id="search-btn" type="submit" class="btn btn-primary">confirm</button>
           </div>
         </form>
+      </div>
+      <div>
+      	<p>こっちはめんどくさそう</p>
+        <table border="2" cellpadding="5">
+			<tbody>
+				<tr>
+					<td width="100">　書籍名　</td>
+					<td width="400"></td>
+					<td rowspan="5" width="300">画像</td>
+				</tr>
+				<tr>
+					<td>　作者　</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>　出版社　</td>
+					<td>発行元</td>
+				</tr>
+				<tr>
+					<td>　価格　</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>　在庫　</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>1情報1行のがよさそう</p>
+		<table border="2" cellpadding="5">
+			<tbody>
+				<tr>
+					<td align="center" colspan="5" text-align="center">書籍検索結果</td>
+				</tr>
+				<tr>
+					<td align="center" width="200">書籍名</td>
+					<td align="center" width="200">作者名</td>
+					<td align="center" width="200">出版社</td>
+					<td align="center" width="200">値段</td>
+					<td align="center" width="100">在庫有無</td>
+				</tr>
+				<tr>
+					<td width="400">たのしいタイムリーフ</td>
+					<td width="200">テスト太郎</td>
+					<td width="200">テスト出版社</td>
+					<td width="200">\150</td>
+					<td width="100">在庫有</td>
+				</tr>
+				<tr>
+					<td width="400">たのしくないタイムリーフ</td>
+					<td width="200">テスト次郎</td>
+					<td width="200">てすと出版社</td>
+					<td width="200">\850</td>
+					<td width="100">在庫無</td>
+				</tr>
+			</tbody>
+		</table>
       </div>
     </div>
     <div class="row footer text-center">
