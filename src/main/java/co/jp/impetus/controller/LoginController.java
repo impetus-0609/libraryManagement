@@ -3,11 +3,14 @@ package co.jp.impetus.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import co.jp.impetus.dto.LoginDto;
+import co.jp.impetus.dto.LoginResultDto;
 import co.jp.impetus.mapper.LoginMapper;
 
 @Controller
@@ -34,34 +37,34 @@ public class LoginController {
     }
 
     /** 実装の参考のために残すがコメントアウト */
-//    @RequestMapping(value = "/next", method = RequestMethod.POST)
-//    public ModelAndView next(
-//            @ModelAttribute(INPUT_COMMAND_NAME) LoginDto dto,
-//            BindingResult result) throws Exception {
-//
-//        // 入力チェック
+    @RequestMapping(value = "/next", method = RequestMethod.POST)
+    public ModelAndView next(
+            @ModelAttribute(INPUT_COMMAND_NAME) LoginDto dto,
+            BindingResult result) throws Exception {
+
+        // 入力チェック
 //        if (StringUtils.isEmpty(dto.getMailAddress())) {
 //            result.rejectValue("mailAddress", "errors.required");
 //        }
 //        if (StringUtils.isEmpty(dto.getPassword())) {
 //            result.rejectValue("password", "errors.required");
 //        }
-//
-//        ModelAndView view = new ModelAndView();
-//
-//        LoginResultDto resultDto =  mapper.selectAll(dto);
-//
+
+        ModelAndView view = new ModelAndView();
+
+        LoginResultDto resultDto =  mapper.selectAll(dto);
+
 //        // 入力チェックエラーの実装部分
 //        if (result.hasErrors()) {
 //            view.getModel().putAll(result.getModel());
 //            view.setViewName("login");
 //            return view;
 //        }
-//
-//        view.setViewName("menu");
-//        view.addObject("name", resultDto.getId());
-//
-//        return view;
-//    }
+
+        view.setViewName("search");
+        view.addObject("name", resultDto.getId());
+
+        return view;
+    }
 
 }

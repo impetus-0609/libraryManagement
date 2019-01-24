@@ -16,12 +16,12 @@
       <span class="project-name">LibraryManagement</span>
     </div>
     <div class="row sub-header">
-      <p:th text='login' />ログイン画面
+      <p>ログイン画面</p>
     </div>
     <div class="content-area">
       <div class="text-center content-center">
         <span>ユーザ名、パスワードを入力してください。</span>
-        <form class="form-horizontal" id="" style="">
+        <form class="form-horizontal" action="#" th:action="@{/login/next}" method="post" id="" style="">
           <div class="form-group">
             <div class="col-md-12">
               <input class="form-control" type="text" placeholder="ユーザー名" size="16" />
@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="">
-            <input type="submit" class="btn btn-lg btn-primary" method="post" value="ログイン" onclick="" />
+            <input type="submit" class="btn btn-lg btn-primary" value="ログイン" onclick="" />
           </div>
         </form>
       </div>

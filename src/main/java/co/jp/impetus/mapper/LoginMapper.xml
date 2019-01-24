@@ -5,7 +5,7 @@
 <mapper namespace="co.jp.impetus.mapper.LoginMapper">
 
     <select id="selectAll" parameterType="co.jp.impetus.dto.LoginDto" resultType="co.jp.impetus.dto.LoginResultDto">
-        select * from test
+        select * from test limit 1
     </select>
 
 </mapper>
