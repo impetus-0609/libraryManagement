@@ -3,6 +3,9 @@ package co.jp.impetus.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DetailsDto implements Serializable {
 
 	/*ISBNコード*/

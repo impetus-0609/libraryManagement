@@ -4,24 +4,73 @@
            xmlns:context="http://www.springframework.org/schema/context"
            xmlns:mvc="http://www.springframework.org/schema/mvc"
            xmlns:aop="http://www.springframework.org/schema/aop"
+           xmlns:tx="http://www.springframework.org/schema/tx"
            xsi:schemaLocation="http://www.springframework.org/schema/beans
-                               http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                               http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
                                http://www.springframework.org/schema/context
-                               http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                               http://www.springframework.org/schema/context/spring-context-4.3.xsd
                                http://www.springframework.org/schema/aop
-                               http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+                               http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+                               http://www.springframework.org/schema/tx
+                               http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
                                http://www.springframework.org/schema/mvc
-                               http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+                               http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
+  <context:component-scan base-package="co.jp.impetus" />
 
-    <context:component-scan base-package="controller" />
+  <mvc:annotation-driven />
+  <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
 
-    <mvc:annotation-driven />
+  <!-- MyBatis設定 -->
+  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="org.postgresql.Driver" />
+    <property name="url" value="jdbc:postgresql://localhost:5432/postgres" />
+    <property name="username" value="postgres" />
+    <property name="password" value="postgres" />
+  </bean>
 
-    <bean id="viewResolver"
-        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
-    </bean>
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="co.jp.impetus.mapper" />
+  </bean>
+
+  <!-- トランザクション設定 -->
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+
+  <tx:advice id="transactionAdvisor" transaction-manager="transactionManager">
+    <tx:attributes>
+      <tx:method name="*" />
+    </tx:attributes>
+  </tx:advice>
+
+  <aop:config>
+    <aop:pointcut id="txPointcut" expression="execution(* co.jp.impetus.service.*Service.*(..))"/>
+    <aop:advisor advice-ref="transactionAdvisor" pointcut-ref="txPointcut"/>
+  </aop:config>
+
+  <!-- SQLセッションファクトリー -->
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="configLocation" value="/WEB-INF/mybatis/mybatis.xml" />
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+
+  <!-- Thymeleaf -->
+  <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+    <property name="prefix" value="/WEB-INF/templates/" />
+    <property name="suffix" value=".html" />
+    <property name="templateMode" value="HTML" />
+    <property name="cacheable" value="false"/>
+  </bean>
+
+  <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+    <property name="enableSpringELCompiler" value="true" />
+    <property name="templateResolver" ref="templateResolver" />
+  </bean>
+
+  <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+    <property name="templateEngine" ref="templateEngine" />
+    <property name="characterEncoding" value="UTF-8"/>
+  </bean>
+
 </beans>
