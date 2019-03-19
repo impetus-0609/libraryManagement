@@ -14,30 +14,32 @@
   <body class="container-fluid disp-style" style="">
     <div th:replace="cmn/cmnPart :: header"></div>
     <div class="content-area container">
-      <div class="row  content-center">
-        <div class="col-md-6 items-detail" style="" th:object="${detailsDto}">
-          <div class="">
-            <label class="items-title" type="" title="書名" style="" th:text="*{prouductionName}">たのしい！Java</label>
+      <th:block th:object="${detailsDto}">
+        <div class="row  content-center">
+          <div class="col-md-6 items-detail" style="">
+            <div class="">
+              <label class="items-title" title="書名" style="" th:text="*{prouductionName}">たのしい！Java</label>
+            </div>
+            <div>
+              <label class="author" title="著者名・編者名" style="" th:text="*{authorName}">著者名・編者名：ウラジーミル・ニシコフ</label>
+            </div>
+            <div>
+              <label class="publishedcomp" title="出版社" style="" th:text="*{publisherName}">出版社：講談社</label>
+            </div>
+            <div>
+              <label class="publishedym" title="出版年月" style="">出版年月：2017.12</label>
+            </div>
+            <div>
+              <label class="isbn-code" title="ISBN" style="" th:text="*{isbnCode}">ISBN：9784114514191</label>
+            </div>
           </div>
-          <div>
-            <label class="author" type="" title="著者名・編者名" style="" th:text="*{authorName}">著者名・編者名：ウラジーミル・ニシコフ</label>
+          <div class="col-md-6" style="">
+            <div class="text-center">
+              <img th:href="@{https://images-na.ssl-images-amazon.com/images/I/61gGT-4YfSL._SX352_BO1,204,203,200_.jpg}" style="width:270px;height:300px;"/>
+            </div>
           </div>
-          <div>
-            <label class="publishedcomp" type="" title="出版社" style="" th:text="*{publisherName}">出版社：講談社</label>
-          </div>
-          <div>
-            <label class="publishedym" type="" title="出版年月" style="">出版年月：2017.12</label>
-          </div>
-          <div>
-            <label class="isbn-code" type="" title="ISBN" style="" th:text="*{isbnCode}">ISBN：9784114514191</label>
-          </div>
-        </div>
-        <div class="col-md-6" style="">
-          <div class="text-center">
-            <img src="/resources/image/gazouhaimage.png" style="width:270px;height:300px;"/>
-          </div>
-        </div>
       </div>
+    </th:block>
     </div>
     <div th:replace="cmn/cmnPart :: footer"></div>
   </body>

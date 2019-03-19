@@ -1,0 +1,37 @@
+<!--?xml version="1.0" encoding="UTF-8" ?-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="co.jp.impetus.mapper.CmnApiMapper">
+
+  <insert id="insertDetail" parameterType="co.jp.impetus.dto.DetailsDto">
+    insert into m_book (isbn_cd, production_name, author_name, publisher)
+    values (#{isbnCd},#{productionName},#{authorName},#{publisher})
+  </insert>
+
+  <update id="updateDetail" parameterType="co.jp.impetus.dto.DetailsDto">
+      UPDATE m_book
+        SET
+          isbn_cd = #{isbnCd}
+          , production_name = #{productionName}
+          , author_name = #{authorName}
+          , publisher = #{publisher}
+          , issued_date = #{issuedDate}
+          , price = #{price}
+          , category = #{category}
+          , book_path = #{bookPath}
+          , description1 = #{description1}
+          , description2 = #{description2}
+          , stock = #{stock}
+          , "language" = #{language}
+          , resgister_dt = #{resgisterDt}
+          , register_date = CURRENT_TIMESTAMP
+          , update_dt = #{updateDt}
+          , update_date = CURRENT_TIMESTAMP
+      WHERE
+          isbn_cd = #{isbnCd}
+  </update>
+
+  <select id="findByIsbn" resultType="co.jp.impetus.dto.DetailsDto" parameterType="co.jp.impetus.dto.DetailsDto">
+    select * from m_book where isbn_cd = #{isbnCd}
+  </select>
+</mapper>

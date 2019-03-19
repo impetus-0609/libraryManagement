@@ -22,19 +22,18 @@ public class DetailsController {
 
     @Autowired
     DetailsMapper mapper;
+    
+    @Autowired
+    DetailsService service;
 
     public static final String INPUT_COMMAND_NAME = "detailsDto";
 
     @RequestMapping(value = "/init", method = RequestMethod.GET)
     public String init(Model model) {
 
-    	List<DetailsDto> dtoList = new ArrayList<>();
-    	DetailsDto dto = null;
-    	DetailsService service = new DetailsService();
+    	List<DetailsDto>  dtoList = createDetailsDto();
 
-    	dtoList = createDetailsDto();
-
-    	dto = service.testLogic(dtoList);
+    	DetailsDto  dto = service.testLogic(dtoList);
 
         model.addAttribute(INPUT_COMMAND_NAME, dto);
 
